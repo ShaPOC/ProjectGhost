@@ -13,7 +13,7 @@ Uniting hackers and common folk ...
 
 ## What is it?
 
-
+A small device making it possible for common folk to join the magical world of hackers. We use the Arduino Yun to easily create a device which will make it possible for everyone to perform a MITM attack over WiFi.
 
 ## Authenticaion
 The development version of Ghost currently contains default data and passwords.
@@ -25,7 +25,10 @@ SSH             | root              | wD6ejDxLE4UW8ycQQBrv
 WiFi            | Ghost             | tN1V68Oy28gw43718043
 
 ## Installation
-### Upgrade tot the latest version
+
+Before proceeding, make sure you have a fresh Arduino Yun device. Either use a new, recently bought one or perform a complete factory reset.
+
+### Upgrade to the latest version
 ----------------------
 
 Initial check; Is the latest version of OpenWRT installed? The White LED for USB should be lit when powered on for example and the ON LED should be steady green when on.
