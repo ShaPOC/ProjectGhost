@@ -1,0 +1,31 @@
+{
+  "name": "Ghost",
+  "description": "Uniting hackers and common folk",
+  "version": "0.0.1",
+  "homepage": "http://projectghost.nl",
+  "author": {
+    "name": "Jimmy Aupperlee",
+    "email": "j.aup.gt@gmail.com"
+  },
+  "bugs": {
+    "url": "http://projectghost.nl/bugs"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "~0.4.4"
+  },
+  "keywords": [
+    "ghost"
+  ]
+}
