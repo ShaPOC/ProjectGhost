@@ -82,11 +82,11 @@ Open up the console by typing ”ssh root@arduino.local” in the terminal. Now 
 Open up the console by typing ”ssh root@arduino.local” in the terminal. Now insert the following commands;
 
 * opkg update
-* opkg install python twisted zope-interface twisted-web libopenssl python-openssl pyopenssl
+* opkg install python twisted zope-interface twisted-web libopenssl python-openssl pyopenssl iptables-mod-nat-extra
 
 Now we need to download the specific SSLStrip version for Ghost available in the software folder of this git.
 You can use SCP (secure copy protocol) over SSH to place the folder sslstrip into the /tmp folder of the Arduino Yun.
-So logout or open another terminal screen and insert the command;
+So logout or open another terminal screen and insert the commands;
 
 * scp -r (sslstrip folder location) root@arduino.local:/tmp
 
@@ -99,3 +99,26 @@ And then we can start to install. So log back into the console and insert the fo
 But ofcourse, this is not all. Because Zope Interface is installed just a little bit differently on OpenWRT, we need a symlink to help SSLStrip out a little bit.
 
 * ln -s /usr/lib/python2.7/site-packages/zope/interface/__init__.py /usr/lib/python2.7/site-packages/zope/__init__.py
+
+And now, we have yet another problem. The versions of Twisted, Twisted Web and Zope installed by OpenWRT are incredibly ancient. We will need to install a newer version for SSLStrip 0.9 to work properly.
+To accomplish this, insert the following commands;
+
+* opkg upgrade tar
+
+* wget --no-check-certificate https://pypi.python.org/packages/source/z/zope.interface/zope.interface-4.1.1.tar.gz#md5=edcd5f719c5eb2e18894c4d06e29b6c6
+* tar zxvf zope.interface-4.1.1.tar.gz
+* cd zope.interface-4.1.1/
+* python ./setup.py install
+* cd ..
+
+* wget http://twistedmatrix.com/Releases/Twisted/14.0/Twisted-14.0.0.tar.bz2 http://twistedmatrix.com/Releases/Web/14.0/TwistedWeb-14.0.0.tar.bz2
+* tar -jxvf Twisted-14.0.0.tar.bz2
+* cd Twisted-14.0.0/
+* python ./setup.py install
+* cd ..
+
+Don't worry about compile errors at the end, they won't get in the way of what we are trying to do here.
+
+* tar -jxvf TwistedWeb-14.0.0.tar.bz2
+* cd TwistedWeb-14.0.0/
+* python ./setup.py install
