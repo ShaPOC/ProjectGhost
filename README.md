@@ -100,7 +100,7 @@ But ofcourse, this is not all. Because Zope Interface is installed just a little
 
 * ln -s /usr/lib/python2.7/site-packages/zope/interface/__init__.py /usr/lib/python2.7/site-packages/zope/__init__.py
 
-And now, we have yet another problem. The versions of Twisted, Twisted Web and Zope installed by OpenWRT are incredibly ancient. We will need to install a newer version for SSLStrip 0.9 to work properly.
+And now, we have yet another problem. The version of Zope installed by OpenWRT are incredibly ancient. We will need to install a newer version for SSLStrip 0.9 to work properly.
 To accomplish this, insert the following commands;
 
 * opkg upgrade tar
@@ -110,15 +110,3 @@ To accomplish this, insert the following commands;
 * cd zope.interface-4.1.1/
 * python ./setup.py install
 * cd ..
-
-* wget http://twistedmatrix.com/Releases/Twisted/14.0/Twisted-14.0.0.tar.bz2 http://twistedmatrix.com/Releases/Web/14.0/TwistedWeb-14.0.0.tar.bz2
-* tar -jxvf Twisted-14.0.0.tar.bz2
-* cd Twisted-14.0.0/
-* python ./setup.py install
-* cd ..
-
-Don't worry about compile errors at the end, they won't get in the way of what we are trying to do here.
-
-* tar -jxvf TwistedWeb-14.0.0.tar.bz2
-* cd TwistedWeb-14.0.0/
-* python ./setup.py install
