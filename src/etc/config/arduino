@@ -1,0 +1,11 @@
+
+config arduino
+	option secure_rest_api 'true'
+	option password '606cdcaf87bb26000497498599754509947879f38de4ca56ed1f7ffeef2944c4'
+
+config wifi-device 'radio0'
+
+config wifi-iface
+
+config interface 'lan'
+

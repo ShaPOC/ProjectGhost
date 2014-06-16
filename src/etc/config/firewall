@@ -1,3 +1,4 @@
+
 config defaults
 	option syn_flood '1'
 	option input 'ACCEPT'
@@ -19,6 +20,27 @@ config zone
 	option forward 'REJECT'
 	option masq '1'
 
+config zone
+	option name 'guest'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'REJECT'
+	option network 'guest'
+
 config forwarding
 	option dest 'wan'
 	option src 'lan'
+
+config forwarding
+	option src 'guest'
+	option dest 'wan'
+
+config rule
+	option src 'guest'
+	option dest_port '22'
+	option proto 'tcp'
+	option target 'REJECT'
+	option name 'Guest SSH Reject'
+
+#config include
+#       option path /etc/firewall.user

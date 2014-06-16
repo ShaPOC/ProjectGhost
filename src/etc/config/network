@@ -15,3 +15,7 @@ config interface 'wan'
 	option proto 'dhcp'
 	option metric '10'
 
+config interface 'guest'
+        option 'proto'      'static'
+        option 'ipaddr'     '10.0.0.1'
+        option 'netmask'    '255.255.255.0' 
