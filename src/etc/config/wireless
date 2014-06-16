@@ -1,4 +1,3 @@
-
 config wifi-device 'radio0'
 	option type 'mac80211'
 	option channel '11'
@@ -13,6 +12,17 @@ config wifi-device 'radio0'
 	option txpower '16'
 	option country 'NL'
 
+config wifi-device  radio1
+        option type     mac80211
+        option channel  11
+        option hwmode   11ng
+        option path     'platform/ehci-platform/usb1/1-1/1-1.1/1-1.1:1.0'
+        option htmode   HT20
+        list ht_capab   GF
+        list ht_capab   SHORT-GI-20
+        list ht_capab   SHORT-GI-40
+        list ht_capab   RX-STBC1
+
 config wifi-iface
 	option device 'radio0'
 	option network 'lan'
@@ -20,4 +30,3 @@ config wifi-iface
 	option ssid 'Ghost'
 	option encryption 'psk2'
 	option key 'tN1V68Oy28gw43718043'
-
