@@ -55,9 +55,9 @@ The following packages are not installed by default, but are required for every 
 Now insert the following commands;
 
 * opkg update
-* opkg install git node node-serialport node-socket.io node-socket.io-client nodogsplash
+* opkg install git node node-serialport node-socket.io node-socket.io-client nodogsplash wshaper
 
-We also require the installation of some specific packages not available on the default opkg servers. These packages serve mainly as drivers for the extra required Wireless adapter.
+We also require the installation of some specific packages not available on the default opkg servers. These packages serve mainly as drivers for the extra Wireless adapter.
 We install them by inserting the following commands;
 
 * cd /tmp
@@ -75,3 +75,27 @@ Open up the console by typing ”ssh root@arduino.local” in the terminal. Now 
 
 * opkg update
 * opkg install vsftpd openssh-sftp-server
+
+### Install SSLStrip
+----------------------
+
+Open up the console by typing ”ssh root@arduino.local” in the terminal. Now insert the following commands;
+
+* opkg update
+* opkg install python twisted zope-interface twisted-web libopenssl python-openssl pyopenssl
+
+Now we need to download the specific SSLStrip version for Ghost available in the software folder of this git.
+You can use SCP (secure copy protocol) over SSH to place the folder sslstrip into the /tmp folder of the Arduino Yun.
+So logout or open another terminal screen and insert the command;
+
+* scp -r (sslstrip folder location) root@arduino.local:/tmp
+
+And then we can start to install. So log back into the console and insert the following commands;
+
+* cd sslstrip
+* python ./setup.py install
+* echo "1" > /proc/sys/net/ipv4/ip_forward
+
+But ofcourse, this is not all. Because Zope Interface is installed just a little bit differently on OpenWRT, we need a symlink to help SSLStrip out a little bit.
+
+* ln -s /usr/lib/python2.7/site-packages/zope/interface/__init__.py /usr/lib/python2.7/site-packages/zope/__init__.py
