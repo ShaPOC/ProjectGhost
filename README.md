@@ -15,7 +15,7 @@ Uniting hackers and common folk ...
 
 A small device making it possible for common folk to take a sneakpeek inside the magical world of hackers. We use the Arduino Yun to create a device which will make it possible for everyone to easily simulate a MITM attack over WiFi.
 
-## Authenticaion
+## Authentication
 The development version of Ghost currently contains default data and passwords.
 They can ofcourse be found inside the different files in this git, but for the sake of easy usage, here they are.
 
