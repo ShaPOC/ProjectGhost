@@ -13,7 +13,7 @@ Uniting hackers and common folk ...
 
 ## What is it?
 
-A small device making it possible for common folk to join the magical world of hackers. We use the Arduino Yun to create a device which will make it possible for everyone to easily perform a MITM attack over WiFi.
+A small device making it possible for common folk to take a sneakpeek inside the magical world of hackers. We use the Arduino Yun to create a device which will make it possible for everyone to easily simulate a MITM attack over WiFi.
 
 ## Authenticaion
 The development version of Ghost currently contains default data and passwords.
