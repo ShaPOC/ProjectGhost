@@ -48,6 +48,8 @@ Also a special Arduino OpenWRT should be installed and not Linino! If you do not
 Before, this would be quite a pain to accomplish. But luckily, Federico Fissore & Federico Vanzati created a great Arduino sketch which will do it all automatically.
 All you need to know can be found here: http://arduino.cc/en/Tutorial/ExpandingYunDiskSpace. Just follow this guide completely to extend the rootfs.
 
+> Small tip: Do not perform the extend over WiFi, use USB instead. If for some reason the Arduino software doesn't recognize the device, then try a different USB cable!
+
 ### Install required packages
 ----------------------
 
