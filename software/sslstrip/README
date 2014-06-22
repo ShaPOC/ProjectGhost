@@ -4,4 +4,4 @@ Sslstrip is a MITM tool that implements Moxie Marlinspike's SSL stripping attack
 
 It requires Python 2.5 or newer, along with the 'twisted' python module.
 
-More Info: [http://www.thoughtcrime.org/software/sslstrip/](http://www.thoughtcrime.org/software/sslstrip/)
+More Info: http://www.thoughtcrime.org/software/sslstrip/

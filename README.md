@@ -50,7 +50,7 @@ nano /etc/opkg.conf
 opkg update
 ```
 
-If it says something like: Updated list of available packages, then we’re good to go!
+> If it says something like: Updated list of available packages, then we’re good to go!
 
 ### Extend the rootfs
 ----------------------
@@ -116,16 +116,29 @@ opkg install python twisted zope-interface twisted-web libopenssl python-openssl
 
 Now we need to download the specific SSLStrip version for Ghost available in the software folder of this git.
 You can use SCP (secure copy protocol) over SSH to place the folder sslstrip into the /tmp folder of the Arduino Yun.
-So logout or open another terminal screen and insert the commands;
+So logout or open another terminal screen and insert the command;
 
 ```
 scp -r (sslstrip folder location) root@arduino.local:/tmp
 ```
 
+> If fore some reason you do not want to use the Ghost version, then use the original. But in this case we will not
+guarantee that it will work flawlessly with your yun.
+```
+cd /tmp
+```
+```
+wget http://www.thoughtcrime.org/software/sslstrip/sslstrip-0.9.tar.gz
+```
+```
+tar -xzvf sslstrip-0.9.tar.gz; mv sslstrip-0.9 sslstrip
+```
+> This way the latest version is downloaded and unpacked in the same place you would find it when using the SCP command as shown above
+
 And then we can start to install. So log back into the console and insert the following commands;
 
 ```
-cd sslstrip
+cd /tmp/sslstrip
 ```
 ```
 python ./setup.py install
@@ -138,27 +151,4 @@ But ofcourse, this is not all. Because Zope Interface is installed just a little
 
 ```
 ln -s /usr/lib/python2.7/site-packages/zope/interface/__init__.py /usr/lib/python2.7/site-packages/zope/__init__.py
-```
-
-And now, we have yet another problem. The version of Zope installed by OpenWRT are incredibly ancient. We will need to install a newer version for SSLStrip 0.9 to work properly.
-To accomplish this, insert the following commands;
-
-```
-opkg upgrade tar
-```
-
-```
-wget --no-check-certificate https://pypi.python.org/packages/source/z/zope.interface/zope.interface-4.1.1.tar.gz#md5=edcd5f719c5eb2e18894c4d06e29b6c6
-```
-```
-tar zxvf zope.interface-4.1.1.tar.gz
-```
-```
-cd zope.interface-4.1.1/
-```
-```
-python ./setup.py install
-```
-```
-cd ..
 ```
