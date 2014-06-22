@@ -32,15 +32,15 @@ config forwarding
 	option src 'lan'
 
 config forwarding
-	option src 'guest'
 	option dest 'wan'
-
-config rule
 	option src 'guest'
-	option dest_port '22'
-	option proto 'tcp'
-	option target 'REJECT'
-	option name 'Guest SSH Reject'
 
-#config include
-#       option path /etc/firewall.user
+#config rule
+#	option src 'guest'
+#	option dest_port '22'
+#	option proto 'tcp'
+#	option target 'REJECT'
+#	option name 'Guest SSH Reject'
+
+config include
+       option path /etc/firewall.user

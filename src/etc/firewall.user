@@ -6,4 +6,5 @@
 # put custom rules into the root chains e.g. INPUT or FORWARD or into the
 # special user chains, e.g. input_wan_rule or postrouting_lan_rule.
 
-iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination 127.0.0.1:10000
+# Send all trafic on the guest interface to SSLStrip
+iptables --table nat --append PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port 10000

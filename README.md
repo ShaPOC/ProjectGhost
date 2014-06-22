@@ -70,7 +70,7 @@ Now insert the following commands;
 opkg update
 ```
 ```
-opkg install git node node-serialport node-socket.io node-socket.io-client nodogsplash wshaper
+opkg install git screen node node-serialport node-socket.io node-socket.io-client nodogsplash wshaper
 ```
 
 We also require the installation of some specific packages not available on the default opkg servers. These packages serve mainly as drivers for the extra Wireless adapter.
@@ -102,8 +102,14 @@ opkg update
 opkg install vsftpd openssh-sftp-server
 ```
 
-### Install SSLStrip
+### Install Ghost SSLSplit
+
+In development here; https://github.com/ShaPOC/ProjectGhost/tree/master/software/sslsplit
+Coming soon ...
+
+### Install SSLStrip (Optional)
 ----------------------
+__WARNING: This installation tutorial remains in the readme for this repository only for reference! You should always prefer the Ghost build of SSLSplit when using Ghost!__
 
 Open up the console by typing ”ssh root@arduino.local” in the terminal. Now insert the following commands;
 
