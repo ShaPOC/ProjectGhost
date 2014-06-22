@@ -40,7 +40,7 @@ Also a special Arduino OpenWRT should be installed and not Linino! If you do not
 * First connect to the open Wifi which should be called something like; Arduino-Yun-XXXXXXXXXXXX.
 * When connected, log into the OpenWRT Linux system by typing ”ssh root@arduino.local” in the terminal. When it asks for a password, enter ”arduino” and press enter.
 * When logged in, type:
-> nano /etc/opkg.conf
+```bash nano /etc/opkg.conf ```
 
 * Remove the check signature option by putting a # (hash) sign in front of it. Or just remove the line completely. Now to save the file, we press CTRL+X and press Y.
 
