@@ -44,7 +44,7 @@ Also a special Arduino OpenWRT should be installed and not Linino! If you do not
 
 * Remove the check signature option by putting a # (hash) sign in front of it. Or just remove the line completely. Now to save the file, we press CTRL+X and press Y.
 
-Now test if we can update the package list by typing:
+* Now test if we can update the package list by typing:
 > opkg update
 
 If it says something like: Updated list of available packages, then we’re good to go!
@@ -54,6 +54,8 @@ If it says something like: Updated list of available packages, then we’re good
 
 Before, this would be quite a pain to accomplish. But luckily, Federico Fissore & Federico Vanzati created a great Arduino sketch which will do it all automatically.
 All you need to know can be found here: http://arduino.cc/en/Tutorial/ExpandingYunDiskSpace. Just follow this guide completely to extend the rootfs.
+
+> Small tip: Do not perform the extend over WiFi, use USB instead. If for some reason the Arduino software doesn't recognize the device, then try a different USB cable!
 
 ### Install required packages
 ----------------------
