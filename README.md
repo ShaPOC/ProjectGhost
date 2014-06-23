@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# Ghost
+# Ghost [![Build Status][travis-image]][travis-url]
 
 Uniting hackers and common folk ...
 
@@ -158,3 +158,6 @@ But ofcourse, this is not all. Because Zope Interface is installed just a little
 ```
 ln -s /usr/lib/python2.7/site-packages/zope/interface/__init__.py /usr/lib/python2.7/site-packages/zope/__init__.py
 ```
+
+[travis-url]: https://travis-ci.org/ShaPOC/ProjectGhost
+[travis-image]: https://travis-ci.org/ShaPOC/ProjectGhost.svg?branch=master
