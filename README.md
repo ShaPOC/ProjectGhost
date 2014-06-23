@@ -104,10 +104,13 @@ opkg install vsftpd openssh-sftp-server
 
 ### Install Ghost SSLSplit
 
-In development here; https://github.com/ShaPOC/ProjectGhost/tree/master/software/sslsplit
-Coming soon ...
+Momentarely we have a Alpha version of SSLSplit running on our Ghost.
+It's in development here; https://github.com/ShaPOC/ProjectGhost/tree/master/software/sslsplit
 
-### Install SSLStrip (Optional)
+There is no easy guide to using this yet, but there will be soon.
+For now, if you want to experiment, download the Binary to your Arduino Yun and test it out using the instructions as found on http://www.roe.ch/SSLsplit.
+
+### Install SSLStrip (Deprecated - Optional)
 ----------------------
 __WARNING: This installation tutorial remains in the readme for this repository only for reference! You should always prefer the Ghost build of SSLSplit when using Ghost!__
 
