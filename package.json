@@ -3,6 +3,7 @@
   "description": "Uniting hackers and common folk",
   "version": "0.0.1",
   "homepage": "http://projectghost.nl",
+  "repository": "https://github.com/ShaPOC/ProjectGhost",
   "author": {
     "name": "Jimmy Aupperlee",
     "email": "j.aup.gt@gmail.com"
