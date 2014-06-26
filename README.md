@@ -104,11 +104,51 @@ opkg install vsftpd openssh-sftp-server
 
 ### Install Ghost SSLSplit
 
-Momentarely we have a Alpha version of SSLSplit running on our Ghost.
+Momentarely we have a Beta version of SSLSplit running on our Ghost.
 It's in development here; https://github.com/ShaPOC/ProjectGhost/tree/master/software/sslsplit
 
-There is no easy guide to using this yet, but there will be soon.
-For now, if you want to experiment, download the Binary to your Arduino Yun and test it out using the instructions as found on http://www.roe.ch/SSLsplit.
+Althought we have not tested it thoroughly, we have tested it's stability and it's working fine.
+To install it, insert the following commands:
+
+```
+opkg update
+```
+```
+opkg install libevent2 libevent2-core libevent2-extra libevent2-openssl libevent2-pthreads openssl-util iptables-mod-nat-extra
+```
+```
+sysctl -w net.ipv4.ip_forward=1
+```
+Now we need to download the specific SSLSplit version for Ghost available in the software folder of this git.
+You can use SCP (secure copy protocol) over SSH to place the folder sslstrip into the /tmp folder of the Arduino Yun.
+So logout or open another terminal screen and insert the command;
+
+```
+scp -r (sslsplit bin location) root@arduino.local:/tmp
+```
+```
+mv /tmp/sslsplit /bin/sslsplit
+```
+```
+chmod 755 /bin/sslsplit
+```
+
+And after all this, you will be able to run SSLSplit on your OpenWRT Arduino Yun! Run:
+```
+sslsplit -h
+```
+To find out the possibilities of this great MITM tool. If you want to intercept SSL connections properly, then you will
+need to generate a Root Certificate for the client to trust. Below you will find the commands to generate these certificates.
+
+```
+mkdir /etc/ssh; cd /etc/ssh
+```
+```
+openssl genrsa -out ca.key 4096
+```
+```
+openssl req -new -x509 -days 1826 -key ca.key -out ca.crt
+```
 
 ### Install SSLStrip (Deprecated - Optional)
 ----------------------
@@ -122,17 +162,6 @@ opkg update
 ```
 opkg install python twisted zope-interface twisted-web libopenssl python-openssl pyopenssl iptables-mod-nat-extra
 ```
-
-Now we need to download the specific SSLStrip version for Ghost available in the software folder of this git.
-You can use SCP (secure copy protocol) over SSH to place the folder sslstrip into the /tmp folder of the Arduino Yun.
-So logout or open another terminal screen and insert the command;
-
-```
-scp -r (sslstrip folder location) root@arduino.local:/tmp
-```
-
-> If fore some reason you do not want to use the Ghost version, then use the original. But in this case we will not
-guarantee that it will work flawlessly with your yun.
 ```
 cd /tmp
 ```
