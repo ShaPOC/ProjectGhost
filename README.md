@@ -70,7 +70,7 @@ Now insert the following commands;
 opkg update
 ```
 ```
-opkg install git screen node node-serialport node-socket.io node-socket.io-client nodogsplash wshaper
+opkg install git screen node node-serialport node-socket.io node-socket.io-client nodogsplash wshaper ettercap
 ```
 
 We also require the installation of some specific packages not available on the default opkg servers. These packages serve mainly as drivers for the extra Wireless adapter.
@@ -102,8 +102,25 @@ opkg update
 opkg install vsftpd openssh-sftp-server
 ```
 
-### Install Ghost SSLSplit
+### Install dsniff
+----------------------
 
+Dsniff cannot be installed through opkg but we can fetch it from the trunk of OpenWRT, so that's pretty great!
+To do so, open up the console by typing ”ssh root@arduino.local” in the terminal. Now insert the following commands;
+
+```
+cd /tmp
+```
+```
+wget http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/dsniff_2.4b1-3_ar71xx.ipk http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libnids_1.24-1_ar71xx.ipk http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libpcap_1.5.3-1_ar71xx.ipk
+```
+```
+opkg install dsniff_2.4b1-3_ar71xx.ipk libnids_1.24-1_ar71xx.ipk libpcap_1.5.3-1_ar71xx.ipk
+```
+> Just so you know, the libnids and libpcap libraries are too old for Urlsnarf to work, so we need these updated versions as well.
+
+### Install Ghost SSLSplit
+----------------------
 Momentarely we have a Beta version of SSLSplit running on our Ghost.
 It's in development here; https://github.com/ShaPOC/ProjectGhost/tree/master/software/sslsplit
 
