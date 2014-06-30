@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+require('../lib/forever/lib/forever/service/cli').startCLI();
+

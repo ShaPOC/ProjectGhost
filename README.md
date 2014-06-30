@@ -150,9 +150,8 @@ openssl genrsa -out ca.key 4096
 openssl req -new -x509 -days 1826 -key ca.key -out ca.crt
 ```
 
-### Install SSLStrip (Deprecated - Optional)
+### Install SSLStrip
 ----------------------
-__WARNING: This installation tutorial remains in the readme for this repository only for reference! You should always prefer the Ghost build of SSLSplit when using Ghost!__
 
 Open up the console by typing ”ssh root@arduino.local” in the terminal. Now insert the following commands;
 

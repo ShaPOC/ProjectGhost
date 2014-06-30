@@ -12,9 +12,9 @@
 # 8443 for SSL connections such as SMTP over SSL, HTTPS, etc
 
 iptables -t nat -F
-iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8080
-iptables -t nat -A PREROUTING -p tcp --dport 443 -j REDIRECT --to-ports 8443
-iptables -t nat -A PREROUTING -p tcp --dport 587 -j REDIRECT --to-ports 8443
-iptables -t nat -A PREROUTING -p tcp --dport 465 -j REDIRECT --to-ports 8443
-iptables -t nat -A PREROUTING -p tcp --dport 993 -j REDIRECT --to-ports 8443
-iptables -t nat -A PREROUTING -p tcp --dport 5222 -j REDIRECT --to-ports 8080
+iptables -t nat -A PREROUTING -i "wan" -p tcp --dport 80 -j REDIRECT --to-ports 8080
+iptables -t nat -A PREROUTING -i "wan" -p tcp --dport 443 -j REDIRECT --to-ports 8443
+iptables -t nat -A PREROUTING -i "wan" -p tcp --dport 587 -j REDIRECT --to-ports 8443
+iptables -t nat -A PREROUTING -i "wan" -p tcp --dport 465 -j REDIRECT --to-ports 8443
+iptables -t nat -A PREROUTING -i "wan" -p tcp --dport 993 -j REDIRECT --to-ports 8443
+iptables -t nat -A PREROUTING -i "wan" -p tcp --dport 5222 -j REDIRECT --to-ports 8080

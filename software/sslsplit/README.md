@@ -9,7 +9,7 @@
 We created a cross compiled build of SSLSplit especially for Ghost.
 The original SSLSplit can be found here: http://www.roe.ch/SSLsplit
 
-* Version: 0.0.1 ( Pre-Alpha )
+* Version: 0.1.0 ( BETA )
 
 ## What is it?
 
