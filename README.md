@@ -127,10 +127,10 @@ So logout or open another terminal screen and insert the command;
 scp -r (sslsplit bin location) root@arduino.local:/tmp
 ```
 ```
-mv /tmp/sslsplit /bin/sslsplit
+mv /tmp/sslsplit /usr/bin/sslsplit
 ```
 ```
-chmod 755 /bin/sslsplit
+chmod 755 /usr/bin/sslsplit
 ```
 
 And after all this, you will be able to run SSLSplit on your OpenWRT Arduino Yun! Run:
