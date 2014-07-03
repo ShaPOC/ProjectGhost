@@ -119,6 +119,60 @@ opkg install dsniff_2.4b1-3_ar71xx.ipk libnids_1.24-1_ar71xx.ipk libpcap_1.5.3-1
 ```
 > Just so you know, the libnids and libpcap libraries are too old for Urlsnarf to work, so we need these updated versions as well.
 
+### Install SSLStrip
+----------------------
+
+Open up the console by typing ”ssh root@arduino.local” in the terminal. Now insert the following commands;
+
+```
+opkg update
+```
+```
+opkg install python twisted zope-interface twisted-web libopenssl python-openssl pyopenssl iptables-mod-nat-extra
+```
+
+And now we stumble-upon a tiny problem. The installed zope-interface, twisted and twisted-web frameworks are incredibly ancient.
+And newer versions are not yet available for this OS / CPU Architecture. But wait,... we cross-compiled them, so they are!
+
+In the folder software/upgrades you will find the new versions in .ipk package.
+Transfer them to the Ghost and execute them using the following commands;
+
+```
+opkg install --force-overwrite zope-interface_3.8.0-1_ar71xx.ipk twisted_11.1.0-1_ar71xx.ipk twisted-web_11.1.0-1_ar71xx.ipk
+```
+
+It may seem strange to force overwrite, but in this case we use newer and better libraries, so it's okay. Besides, there are no
+other dependencies at this point. Continue with installing SSLStrip by inserting the following commands;
+
+```
+cd /tmp
+```
+```
+wget http://www.thoughtcrime.org/software/sslstrip/sslstrip-0.9.tar.gz
+```
+```
+tar -xzvf sslstrip-0.9.tar.gz; mv sslstrip-0.9 sslstrip
+```
+> This way the latest version is downloaded and unpacked in the same place you would find it when using the SCP command as shown above
+
+And then we can start to install. So log back into the console and insert the following commands;
+
+```
+cd /tmp/sslstrip
+```
+```
+python ./setup.py install
+```
+```
+echo "1" > /proc/sys/net/ipv4/ip_forward
+```
+
+But ofcourse, this is not all. Because Zope Interface is installed just a little bit differently on OpenWRT, we need a symlink to help SSLStrip out a little bit.
+
+```
+ln -s /usr/lib/python2.7/site-packages/zope/interface/__init__.py /usr/lib/python2.7/site-packages/zope/__init__.py
+```
+
 ### Install Ghost SSLSplit
 ----------------------
 Momentarely we have a Beta version of SSLSplit running on our Ghost.
@@ -165,46 +219,6 @@ openssl genrsa -out ca.key 4096
 ```
 ```
 openssl req -new -x509 -days 1826 -key ca.key -out ca.crt
-```
-
-### Install SSLStrip
-----------------------
-
-Open up the console by typing ”ssh root@arduino.local” in the terminal. Now insert the following commands;
-
-```
-opkg update
-```
-```
-opkg install python twisted zope-interface twisted-web libopenssl python-openssl pyopenssl iptables-mod-nat-extra
-```
-```
-cd /tmp
-```
-```
-wget http://www.thoughtcrime.org/software/sslstrip/sslstrip-0.9.tar.gz
-```
-```
-tar -xzvf sslstrip-0.9.tar.gz; mv sslstrip-0.9 sslstrip
-```
-> This way the latest version is downloaded and unpacked in the same place you would find it when using the SCP command as shown above
-
-And then we can start to install. So log back into the console and insert the following commands;
-
-```
-cd /tmp/sslstrip
-```
-```
-python ./setup.py install
-```
-```
-echo "1" > /proc/sys/net/ipv4/ip_forward
-```
-
-But ofcourse, this is not all. Because Zope Interface is installed just a little bit differently on OpenWRT, we need a symlink to help SSLStrip out a little bit.
-
-```
-ln -s /usr/lib/python2.7/site-packages/zope/interface/__init__.py /usr/lib/python2.7/site-packages/zope/__init__.py
 ```
 
 [travis-url]: https://travis-ci.org/ShaPOC/ProjectGhost
