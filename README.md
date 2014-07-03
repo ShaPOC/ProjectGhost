@@ -141,6 +141,8 @@ Transfer them to the Ghost and execute them using the following commands;
 opkg install --force-overwrite zope-interface_3.8.0-1_ar71xx.ipk twisted_11.1.0-1_ar71xx.ipk twisted-web_11.1.0-1_ar71xx.ipk
 ```
 
+> Heads up! The command above may take a while. Do not cancel the process, because you think nothing is happening! If you would like to be sure, execute the above command with the --verbosity=4 option attached.
+
 It may seem strange to force overwrite, but in this case we use newer and better libraries, so it's okay. Besides, there are no
 other dependencies at this point. Continue with installing SSLStrip by inserting the following commands;
 
