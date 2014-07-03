@@ -7,7 +7,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=zope-interface
+PKG_NAME:=zope.interface
 PKG_VERSION:=3.8.0
 PKG_RELEASE:=1
 
