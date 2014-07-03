@@ -7,7 +7,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=twisted-web
+PKG_NAME:=twisted.web
 PKG_VERSION:=11.1.0
 PKG_RELEASE:=1
 
@@ -38,7 +38,7 @@ endef
 define Package/twisted-web
 $(call Package/twisted-web/default)
   TITLE:=Python networking engine
-  DEPENDS+= +zope.interface
+  DEPENDS+= +twisted
 endef
 
 define Build/Compile
