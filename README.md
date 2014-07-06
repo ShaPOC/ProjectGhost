@@ -128,10 +128,19 @@ Open up the console by typing ”ssh root@arduino.local” in the terminal. Now 
 opkg update
 ```
 ```
-opkg install python libopenssl python-openssl pyopenssl iptables-mod-nat-extra
+opkg install python libopenssl python-openssl pyopenssl iptables-mod-nat-extra ipset iptables-mod-ipset
+```
+```
+cd /tmp
+```
+```
+wget http://downloads.arduino.cc/openwrtyun/1/packages/kmod-ipt-ipset_3.3.8%2B6.11-2_ar71xx.ipk
+```
+```
+opkg install opkg install kmod-ipt-ipset_3.3.8\+6.11-2_ar71xx.ipk
 ```
 
-And now we stumble-upon a tiny problem. The installed zope-interface, twisted and twisted-web frameworks are incredibly ancient.
+And now we stumble-upon a tiny problem. The available zope-interface, twisted and twisted-web frameworks are incredibly ancient.
 And newer versions are not yet available for this OS / CPU Architecture. But wait,... we cross-compiled them, so they are!
 
 In the folder software/upgrades you will find the new versions in .ipk package.

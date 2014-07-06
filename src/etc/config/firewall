@@ -42,5 +42,5 @@ config forwarding
 #	option target 'REJECT'
 #	option name 'Guest SSH Reject'
 
-#config include
-#       option path /etc/firewall.user
+config include
+       option path /etc/firewall.user
