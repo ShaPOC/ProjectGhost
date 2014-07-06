@@ -138,13 +138,13 @@ In the folder software/upgrades you will find the new versions in .ipk package.
 Transfer them to the Ghost;
 
 ```
-scp /(folder-containing-ipk-files)/* root@ghost.local:/overlay
+scp /(folder-containing-ipk-files)/* root@ghost.local:/tmp
 ```
 
 and then when inside ghost, go to the folder we copied them to;
 
 ```
-cd /overlay
+cd /tmp
 ```
 
 and execute them using the following commands;
@@ -179,12 +179,6 @@ python ./setup.py install
 ```
 ```
 echo "1" > /proc/sys/net/ipv4/ip_forward
-```
-
-But ofcourse, this is not all. Because Zope Interface is installed just a little bit differently on OpenWRT, we need a symlink to help SSLStrip out a little bit.
-
-```
-ln -s /usr/lib/python2.7/site-packages/zope/interface/__init__.py /usr/lib/python2.7/site-packages/zope/__init__.py
 ```
 
 ### Install Ghost SSLSplit
