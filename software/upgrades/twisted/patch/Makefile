@@ -51,6 +51,8 @@ define Package/twisted/install
 	$(CP) \
 	    $(PKG_INSTALL_DIR)$(PYTHON_PKG_DIR)/* \
 	    $(1)$(PYTHON_PKG_DIR)
+    $(CP) \
+    $(PKG_INSTALL_DIR)/usr/bin/* \ $(1)/usr/bin/
 endef
 
 $(eval $(call BuildPackage,twisted))

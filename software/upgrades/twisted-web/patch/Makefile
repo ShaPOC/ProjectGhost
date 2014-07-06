@@ -43,7 +43,6 @@ endef
 
 define Build/Compile
 	$(call Build/Compile/PyMod,., install --prefix="/usr" --root="$(PKG_INSTALL_DIR)" )
-	$(SED) 's,#!$(PYTHON),#!/usr/bin/python,' $(PKG_INSTALL_DIR)/usr/bin/*
 endef
 
 define Package/twisted-web/install

@@ -135,16 +135,28 @@ And now we stumble-upon a tiny problem. The installed zope-interface, twisted an
 And newer versions are not yet available for this OS / CPU Architecture. But wait,... we cross-compiled them, so they are!
 
 In the folder software/upgrades you will find the new versions in .ipk package.
-Transfer them to the Ghost and execute them using the following commands;
+Transfer them to the Ghost;
+
+```
+scp /(folder-containing-ipk-files)/* root@ghost.local:/overlay
+```
+
+and then when inside ghost, go to the folder we copied them to;
+
+```
+cd /overlay
+```
+
+and execute them using the following commands;
 
 ```
 opkg install --force-overwrite zope-interface_3.8.0-1_ar71xx.ipk twisted_11.1.0-1_ar71xx.ipk twisted-web_11.1.0-1_ar71xx.ipk
 ```
 
-> Heads up! The command above may take a while. Do not cancel the process, because you think nothing is happening! If you would like to be sure, execute the above command with the --verbosity=4 option attached.
-
 It may seem strange to force overwrite, but in this case we use newer and better libraries, so it's okay. Besides, there are no
-other dependencies at this point. Continue with installing SSLStrip by inserting the following commands;
+other dependencies at this point.
+
+Continue with installing SSLStrip by inserting the following commands;
 
 ```
 cd /tmp
