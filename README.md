@@ -128,7 +128,7 @@ Open up the console by typing ”ssh root@arduino.local” in the terminal. Now 
 opkg update
 ```
 ```
-opkg install python twisted zope-interface twisted-web libopenssl python-openssl pyopenssl iptables-mod-nat-extra
+opkg install python libopenssl python-openssl pyopenssl iptables-mod-nat-extra
 ```
 
 And now we stumble-upon a tiny problem. The installed zope-interface, twisted and twisted-web frameworks are incredibly ancient.
