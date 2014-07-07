@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %} {{ general_web_title }} {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    {% block head_css %}
+    <link href="/css/base.css" rel="stylesheet" type="text/css"/>
+    {% endblock %}
+
+    {% block head_js %}
+    <script src="/js/jquery.min.js" type="application/javascript"></script>
+    <script src="/js/bootstrap.min.js" type="application/javascript"></script>
+    <script src="/js/bootstrap-select.min.js" type="application/javascript"></script>
+    <script src="/js/bootstrap-switch.min.js" type="application/javascript"></script>
+    <script src="/js/flatui-checkbox.min.js" type="application/javascript"></script>
+    <script src="/js/flatui-radio.min.js" type="application/javascript"></script>
+    <script src="/js/ui.min.js" type="application/javascript"></script>
+    {% endblock %}
+
+</head>
+<body class="flat">
+<header id="header">
+    <div class="container">
+        <section class="row">
+            <div class="col-md-8">
+                <div id="logo" class="logo inline-block">
+                    <img src="/img/logo-white.png" alt="Ghost Logo"/>
+                </div>
+                <div id="logo-text" class="logo-text inline-block">
+                    <h1>Ghost Local</h1>
+
+                    <h2>Admin Panel</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="pull-right">
+                    <a class="navigation" href="menu" title="Menu">Menu</a>
+                    <a class="navigation" href="http://ghost.local/cgi-bin/luci/webpanel/homepage" title="Advanced options">Advanced</a>
+                    <a class="navigation" href="logout" title="Logout">Logout</a>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="col-md-10 col-md-offset-2">
+                <ul id="stats" class="stats pull-right">
+                    <li>Verbonden gebruikers:<span data-id="user-count" class="value">0</span></li>
+                    <li>IP Adres:<span data-id="ip-address" class="value">0.0.0.0</span></li>
+                    <li>Signaal sterkte:<span data-id="signal-strength" class="value">
+                            <div data-id="wifi-bars">
+                                <div data-id="nill"></div>
+                                <div data-id="low"></div>
+                                <div data-id="medium"></div>
+                                <div data-id="full"></div>
+                            </div>
+                        </span></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</header>
+
+{% block content %} {% endblock %}
+
+<footer id="footer">
+    <div class="container">
+        <div class="social">
+            <ul class="social-buttons">
+                <li>
+                    <iframe class="github-btn"
+                            src="http://ghbtns.com/github-btn.html?user=shapoc&amp;repo=projectghost&amp;type=watch&amp;count=true"
+                            width="100" height="20" title="Star on GitHub"></iframe>
+                </li>
+                <li>
+                    <iframe class="github-btn"
+                            src="http://ghbtns.com/github-btn.html?user=shapoc&amp;repo=projectghost&amp;type=fork&amp;count=true"
+                            width="102" height="20" title="Fork on GitHub"></iframe>
+                </li>
+                <li class="follow-btn">
+                    <iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true"
+                            src="http://platform.twitter.com/widgets/follow_button.1404409145.html#_=1404643993987&amp;id=twitter-widget-1&amp;lang=en&amp;screen_name=projectghostnl&amp;show_count=true&amp;show_screen_name=true&amp;size=m"
+                            class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button"
+                            data-twttr-rendered="true" style="width: 236px; height: 20px;"></iframe>
+                </li>
+            </ul>
+        </div>
+
+
+        <p>Designed and built with all the love in the world by <a href="http://twitter.com/fricorico"
+                                                                   target="_blank">@FricoRico</a> and <a
+                href="http://twitter.com/frchris92" target="_blank">@FRchris92</a>.</p>
+
+        <p>Maintained by the <a href="https://github.com/shapoc/projectghost?tab=members">core team</a> with the help of
+            <a
+                    href="https://github.com/shapoc/projectghost/graphs/contributors">our contributors</a>.</p>
+
+        <p>Code licensed under <a href="https://github.com/shapoc/projectghost/blob/master/LICENSE"
+                                  target="_blank">MIT</a>,
+            documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <ul class="footer-links muted">
+            <li>Currently v1.0.0</li>
+            <li>-</li>
+            <li><a href="https://github.com/shapoc/projectghost">GitHub</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>

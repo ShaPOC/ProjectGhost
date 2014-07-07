@@ -1,0 +1,57 @@
+header#header {
+    background-color: #f6f6f6;
+    padding-top: 25px;
+    padding-bottom: 125px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+div#logo {
+    margin-right: 25px;
+}
+
+div#logo img {
+    height: 140px;
+}
+
+div#logo-text h1 {
+    font-family: 'MetaPro', sans-serif;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 64px;
+    text-transform: uppercase;
+
+    margin: 0;
+}
+
+div#logo-text h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: uppercase;
+
+    margin: 0;
+}
+
+ul#stats {
+    list-style: none;
+}
+
+ul#stats li {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+ul#stats li:last-child {
+    margin-right: 0;
+}
+
+ul#stats li span {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: 300;
+    color: #7098a2;
+    vertical-align: top;
+}

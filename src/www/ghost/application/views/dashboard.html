@@ -1,0 +1,140 @@
+{% extends 'layouts/bootstrap.html' %}
+
+{% block content %}
+
+<main id="main" class="main">
+    <div class="container">
+        <h1>Hotspot instellingen</h1>
+        <section class="row">
+            <div class="col-md-6">
+
+                <form role="form">
+                    <div class="form-group">
+                        <label for="hotspot">Zoek naar wifi hotspot</label>
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="hotspot" placeholder="Hotspot zoekterm">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button"><i
+                                                class="glyphicon glyphicon-search"></i>
+                                        </button>
+                                    </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="accesspoint">Verbind met bestaand access point</label>
+
+                        <div class="select-group">
+                            <select class="selectpicker" id="accesspoint" data-width="100%">
+                                <option data-icon="glyphicon glyphicon-signal">eduroam</option>
+                                <option data-icon="glyphicon glyphicon-signal">eduroam</option>
+                                <option data-icon="glyphicon glyphicon-signal">eduroam</option>
+                                <option data-icon="glyphicon glyphicon-signal">eduroam</option>
+                                <option data-icon="glyphicon glyphicon-signal">eduroam</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Verander de hotspot naam</label>
+                        <input type="email" class="form-control" id="name" placeholder="Hotspot naam" value="Ghost">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Verander het hotspot wachtwoord</label>
+                        <input type="password" name="wifi-password" class="form-control" id="password" placeholder="Hotspot wachtwoord"
+                               value="tN1V68Oy28gw43718043">
+                    </div>
+                    <div class="form-group">
+                        <div class="password-show switch switch-square"
+                             data-on-label="<i class='glyphicon glyphicon glyphicon-ok'></i>"
+                             data-off-label="<i class='glyphicon glyphicon-remove'></i>">
+                            <input type="checkbox" id="password-show"/>
+                        </div>
+                        <label for="password-show">Toon wachtwoord</label>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="group">
+                    <label>Verbonden gebruikers</label>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img data-src="holder.js/100%x200" alt="100%x200" class="img-rounded"
+                                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNDEiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjQxIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2VlZSI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEyMC41IiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNhYWE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LXNpemU6MTVweDtmb250LWZhbWlseTpBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4yNDF4MjAwPC90ZXh0Pjwvc3ZnPg==">
+
+                                <div class="caption">
+                                    <h6>192.168.1.24</h6>
+
+                                    <a href="#" class="btn btn-primary btn-block" role="button"><i
+                                            class="glyphicon glyphicon-eye-open"></i> Bekijken</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img data-src="holder.js/100%x200" alt="100%x200" class="img-rounded"
+                                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNDEiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjQxIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2VlZSI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEyMC41IiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNhYWE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LXNpemU6MTVweDtmb250LWZhbWlseTpBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4yNDF4MjAwPC90ZXh0Pjwvc3ZnPg==">
+
+                                <div class="caption">
+                                    <h6>192.168.1.22</h6>
+
+                                    <a href="#" class="btn btn-primary btn-block" role="button"><i
+                                            class="glyphicon glyphicon-eye-open"></i> Bekijken</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img data-src="holder.js/100%x200" alt="100%x200" class="img-rounded"
+                                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNDEiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjQxIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2VlZSI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEyMC41IiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNhYWE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LXNpemU6MTVweDtmb250LWZhbWlseTpBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZjtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4yNDF4MjAwPC90ZXh0Pjwvc3ZnPg==">
+
+                                <div class="caption">
+                                    <h6>192.168.1.29</h6>
+
+                                    <a href="#" class="btn btn-primary btn-block" role="button"><i
+                                            class="glyphicon glyphicon-eye-open"></i> Bekijken</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="center-block">
+                        <div class="pagination">
+                            <ul>
+                                <li class="previous"><a href="#" class="glyphicon glyphicon-chevron-left"></a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li class="next"><a href="#" class="glyphicon glyphicon-chevron-right"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <label>Algemene informatie Ghost</label>
+
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span data-id="ip-address" class="badge">0.0.0.0</span>
+                            IP Adres
+                        </li>
+                        <li class="list-group-item">
+                            <span data-id="user-count" class="badge">0</span>
+                            Verbonden gebruikers
+                        </li>
+                        <li class="list-group-item">
+                            <span data-id="signal-strength-text" class="badge">Sterk</span>
+                            Signaal sterkte
+                        </li>
+                        <li class="list-group-item">
+                            <span data-id="signal-strength-speed" class="badge">-</span>
+                            Netwerk snelheid
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+
+{% endblock %}

@@ -1,0 +1,58 @@
+body.flat {
+    background-color: #34aabc;
+}
+
+body.flat header#header {
+    background: transparent;
+    border-bottom-color: transparent;
+}
+
+body.flat a.navigation {
+    background-color: transparent;
+    padding: 10px 25px;
+    color: #ceeded;
+    text-decoration: none;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    border: 1px solid #ceeded;
+}
+
+body.flat a.logout:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    text-decoration: none;
+}
+
+body.flat div#logo-text h1,
+body.flat div#logo-text h2 {
+    color: #ffffff;
+}
+
+body.flat main#main {
+    padding: 0;
+}
+
+body.flat main#main .container {
+    background-color: #ffffff;
+    padding: 25px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-bottom: 4px solid #dbdbdb;
+}
+
+body.flat ul#stats li {
+    color: #ffffff;
+}
+
+body.flat ul#stats li span {
+    color: #ceeded;
+}
+
+body.flat [data-id="wifi-bars"] > * {
+    background-color: #ceeded;
+}
+
+
+body.flat [data-id="wifi-bars"] > *[disabled] {
+    background-color: #70c0c4;
+}

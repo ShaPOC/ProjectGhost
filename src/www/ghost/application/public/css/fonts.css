@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'MetaPro';
+    src: url('../fonts/metapro-bold.eot');
+    src: url('../fonts/metapro-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/metapro-bold.woff') format('woff'),
+         url('../fonts/metapro-bold.ttf') format('truetype'),
+         url('../fonts/metapro-bold.svg#metaprobold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans-condlight.eot');
+    src: url('../fonts/opensans-condlight.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/opensans-condlight.woff') format('woff'),
+    url('../fonts/opensans-condlight.ttf') format('truetype'),
+    url('../fonts/opensans-condlight.svg#opensanscondensedlight') format('svg');
+    font-weight: lighter;
+    font-style: normal;
+}

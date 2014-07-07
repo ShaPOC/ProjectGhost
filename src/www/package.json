@@ -1,0 +1,33 @@
+{
+  "name": "Ghost",
+  "description": "Uniting hackers and common folk",
+  "version": "0.0.1",
+  "homepage": "http://projectghost.org",
+  "repository": "https://github.com/ShaPOC/ProjectGhost",
+  "author": {
+    "name": "Jimmy Aupperlee",
+    "email": "j.aup.gt@gmail.com"
+  },
+  "bugs": {
+    "url": "http://projectghost.nl/bugs"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+    "dependencies": {
+        "cp-logger": "~0.0.4",
+        "express": "~4.0.0",
+        "swig": "~1.3.2",
+        "cookie-parser": "~1.0.1",
+        "express-session": "~1.0.2",
+        "morgan": "~1.0.0",
+        "body-parser": "~1.0.0",
+        "method-override": "~1.0.0",
+        "locale": "*",
+        "require-all": "~0.0.8",
+        "nedb": "~0.10.5"
+    },
+  "keywords": [
+    "ghost"
+  ]
+}

@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="http://projectghost.nl">
-    <img src="http://projectghost.nl/assets/img/ghost_transparant.png"/>
+  <a href="http://projectghost.org">
+    <img src="http://projectghost.org/assets/img/ghost_transparant.png"/>
   </a>
 </p>
 
@@ -8,7 +8,8 @@
 
 Uniting hackers and common folk ...
 
-* Version 0.1 ( Stable Spectre )
+* ~~ Version 0.1 ( Stable Spectre ) ~~
+* Version 0.2 ( Haunted Hyperosmia )
 * Root folder / found inside src/
 
 ## What is it?
@@ -119,6 +120,14 @@ opkg install dsniff_2.4b1-3_ar71xx.ipk libnids_1.24-1_ar71xx.ipk libpcap_1.5.3-1
 ```
 > Just so you know, the libnids and libpcap libraries are too old for Urlsnarf to work, so we need these updated versions as well.
 
+And now we have to make sure that ettercap keeps working... It needs an older libpcap, so we're gonna pull a little bit of trickery.
+
+```
+ln -s /usr/lib/libpcap.so.1.3 /usr/lib/libpcap.so.1.1
+```
+
+We know, it's not very nice but it works like a charm!
+
 ### Install SSLStrip
 ----------------------
 
@@ -128,7 +137,7 @@ Open up the console by typing ”ssh root@arduino.local” in the terminal. Now 
 opkg update
 ```
 ```
-opkg install python libopenssl python-openssl pyopenssl iptables-mod-nat-extra ipset iptables-mod-ipset
+opkg install python libopenssl python-openssl pyopenssl iptables-mod-nat-extra ipset iptables-mod-ipset nodogsplash
 ```
 ```
 cd /tmp
@@ -189,6 +198,31 @@ python ./setup.py install
 ```
 echo "1" > /proc/sys/net/ipv4/ip_forward
 ```
+
+That's it! With our versions of zope-interface and twisted you are ready to use SSLStrip!
+
+### Getting everything ready
+----------------------
+We can now install all the Ghost files. In the near future we will release installable packages.
+For now, just extract the entire src/ directory to the root of your Ghost.
+
+After doing so, we need to insert a few more commands;
+
+```
+chmod 755 /etc/init.d/ghost-node
+```
+```
+chmod 755 /etc/init.d/ghost-sniffers
+```
+
+```
+/etc/init.d/ghost-node enable
+```
+```
+/etc/init.d/ghost-sniffers enable
+```
+
+And we're done!
 
 ### Install Ghost SSLSplit
 ----------------------
