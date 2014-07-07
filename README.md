@@ -8,7 +8,7 @@
 
 Uniting hackers and common folk ...
 
-* ~~ Version 0.1 ( Stable Spectre ) ~~
+<del>Version 0.1 ( Stable Spectre )</del>
 * Version 0.2 ( Haunted Hyperosmia )
 * Root folder / found inside src/
 
